@@ -41,7 +41,5 @@ public class lambda01_VariableExpression {
         c.cal(10, 20);
         System.out.println(c.cal(40, 60));
 
-
-
     }
 }

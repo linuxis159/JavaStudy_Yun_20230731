@@ -14,14 +14,14 @@ public class Stream04_Reduction {
         // 3.Arisa comapre with Suzuki
         // 4.Suzuki more long
         // 5.return Suzuki
-        BinaryOperator<String> lc = (s1,s2) -> {
+
+        // reduce fist argument added first array item
+        String str = names.stream().reduce("", (s1,s2) -> {
             if(s1.length() > s2.length())
                 return s1;
             else
                 return s2;
-        };
-        // reduce fist argument added first array item
-        String str = names.stream().reduce("", lc);
+        });
         System.out.println(str);
 
     }

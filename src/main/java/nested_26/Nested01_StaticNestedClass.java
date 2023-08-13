@@ -10,17 +10,19 @@ public class Nested01_StaticNestedClass {
 
 
     class Outer{
-        private static int num = 0;
+        private static int staticNum = 0;
+        //share only static variable
+        private int instanceNum = 0;
         //static nested class
         //share static member variable num
         static class Nested1 {
             void add(int n){
-                num += n;
+                staticNum += n;
             }
         }
         static class Nested2 {
             int get(){
-                return num;
+                return staticNum;
             }
         }
     }

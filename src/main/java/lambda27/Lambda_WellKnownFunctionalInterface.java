@@ -3,10 +3,9 @@ package lambda27;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.random.RandomGenerator;
 
-public class Lambda_WellKnownFunctionInterface {
+public class Lambda_WellKnownFunctionalInterface {
     interface Predicate<T> {
         boolean test(T t);
     }
