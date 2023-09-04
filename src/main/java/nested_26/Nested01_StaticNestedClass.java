@@ -6,6 +6,10 @@ public class Nested01_StaticNestedClass {
         nst1.add(5);
         Outer.Nested2 nst2 = new Outer.Nested2();
         System.out.println(nst2.get());
+
+        System.out.println(Outer.Nested3.nested3);
+        Outer.Nested3.nested3Print();
+        System.out.println(NormalClass.normalClassID);
     }
 
 
@@ -25,5 +29,16 @@ public class Nested01_StaticNestedClass {
                 return staticNum;
             }
         }
+
+        static class Nested3{
+            static int nested3 = 30;
+            static void nested3Print(){
+                System.out.println();
+            }
+        }
     }
+}
+
+class NormalClass{
+    static int normalClassID = 3000;
 }

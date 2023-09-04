@@ -8,6 +8,13 @@ public class Nested2_InnerClass {
         Outer.Member olm1 = o1.new Member();
         Outer.Member olm2 = o2.new Member();
 
+        o1 = null;
+        o2 = null;
+        //never Collected, because member class exist
+        for(;;){
+            System.gc();
+        }
+
     }
     static class Outer{
         private int num = 0;
@@ -22,7 +29,15 @@ public class Nested2_InnerClass {
             int get(){
                 return num;
             }
+            @Override
+            protected void finalize() throws Throwable {
+                System.out.println("Member Class Collected");
+            }
 
+        }
+        @Override
+        protected void finalize() throws Throwable {
+            System.out.println("Outer Class Collected");
         }
 
     }

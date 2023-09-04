@@ -11,6 +11,7 @@ public class Lambda_WellKnownFunctionalInterface {
     }
     public static int sum(List<Integer> list){
         return list.stream()
+                //Predicate
                 .filter(s -> s % 2 == 0)
                 //Predicate
                 .mapToInt(s -> s)

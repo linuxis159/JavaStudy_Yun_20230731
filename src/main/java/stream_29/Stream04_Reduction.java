@@ -15,7 +15,7 @@ public class Stream04_Reduction {
         // 4.Suzuki more long
         // 5.return Suzuki
 
-        // reduce fist argument added first array item
+        // reduce first argument added first array item
         String str = names.stream().reduce("", (s1,s2) -> {
             if(s1.length() > s2.length())
                 return s1;
