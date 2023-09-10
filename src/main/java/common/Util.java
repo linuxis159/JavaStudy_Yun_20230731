@@ -2,6 +2,7 @@ package common;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Util {
     public static void main(String[] args){
@@ -24,8 +25,8 @@ public class Util {
         for(int i=0; i<20; i++){
             String s = "";
             for(int j=0; j<5; j++){
-                int ii = (int)(Math.random() * 300);
-                char c = (char)ii;
+                int ii = (int)(new Random().nextInt(10));
+                char c = (char)(97 + ii);
                 s += c;
             }
             randomList.add(s);

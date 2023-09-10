@@ -2,14 +2,15 @@ package stream_30;
 
 import common.Util;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class C230907 {
     public static void main(String[] args){
-        problem1(Util.getRandomIntegerList());
-        problem2(Util.getRandomStringList());
-        problem3(Util.getRandomIntegerList());
-        problem4(Util.getRandomStringList());
+        //problem1(Util.getRandomIntegerList());
+        //problem2(Util.getRandomStringList());
+        //problem3(Util.getRandomIntegerList());
+        problem4(Util.getDuplicationStringList());
 
     }
     //주어진 List<Integer>에서 모든 홀수를 찾아 새로운 리스트로 반환하세요.
@@ -20,7 +21,9 @@ public class C230907 {
 
     //주어진 List<String>에서 문자열을 알파벳 순으로 정렬하세요.
     static void problem2(List<String> list){
-        list.stream().sorted();
+        list.stream()
+                .sorted(Comparator.comparing(string -> string.toString()))
+                .forEach(string -> System.out.println(string));
     }
     //주어진 List<Integer>에서 최댓값을 찾아 반환하세요.
     static void problem3(List<Integer> list){
@@ -38,7 +41,8 @@ public class C230907 {
     //주어진 List<String>에서 중복된 요소를 제거한 후 새로운 리스트로 반환하세요.
 
     static void problem4(List<String> list){
-
+        list.stream().forEach(string -> System.out.println("before : " +string));
+        list.stream().distinct().forEach(string -> System.out.println(string));
 
     }
 }
